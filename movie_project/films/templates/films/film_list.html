@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Film List</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <h1 class="mt-5">Film List</h1>
+    <a href="{% url 'add_film' %}" class="btn btn-primary mb-3">Add Film</a>
+    <div class="list-group">
+        {% for film in films %}
+        <div class="list-group-item">
+            <h5 class="mb-1">{{ film.title }}</h5>
+            <p class="mb-1">{{ film.description }}</p>
+            <small>{{ film.review }}</small>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+</body>
+</html>
